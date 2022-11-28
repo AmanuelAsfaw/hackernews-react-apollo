@@ -14,14 +14,14 @@ import { WebSocketLink } from '@apollo/client/link/ws';
 import { getMainDefinition } from '@apollo/client/utilities';
 
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:4000`,
+  uri: `ws://localhost:4000/graphql`,
   options: {
-    reconnect : true,
+    reconnect: true,
     connectionParams: {
       authToken: localStorage.getItem(AUTH_TOKEN)
     }
   }
-})
+});
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:4000'
